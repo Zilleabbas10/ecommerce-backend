@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 //core node.js module to hash the password
 const crypto = require("crypto");
 //to generate unique strings
-const uuidv1 = require("uuvid/v1");
+const {v1: uuidv1} = require("uuid");
 
 const userSchema = new mongoose.Schema({
     name: {
