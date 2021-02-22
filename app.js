@@ -11,6 +11,7 @@ const bodyParser = require("body-parser");
 
 // for saving any data in cookies
 const cookieParser = require("cookie-parser");
+const expressValidator = require("express-validator");
 
 require("dotenv").config();
 // import routes here
@@ -30,6 +31,7 @@ mongoose.connect(process.env.DATABASE, {
 app.use(morgan("dev"));
 app.use(bodyParser.json())
 app.use(cookieParser())
+app.use(expressValidator())
 
 // routes middleware
 app.use("/api", userRoutes)
